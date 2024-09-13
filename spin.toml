@@ -1,0 +1,23 @@
+spin_manifest_version = 2
+
+[application]
+name = "urmanac-beta"
+version = "0.1.0"
+authors = ["Kingdon Barrett <kingdon+github@tuesdaystudios.com>"]
+description = "Urbit Encyclopedia Project (beta)"
+
+[[trigger.http]]
+route = "/..."
+component = "urmanac-beta"
+
+[component.urmanac-beta]
+source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.1.0/spin_static_fs.wasm", digest = "sha256:96c76d9af86420b39eb6cd7be5550e3cb5d4cc4de572ce0fd1f6a29471536cb4" }
+files = [{ source = "assets/socryx-topled.arvo.network", destination = "/" }]
+
+[[trigger.http]]
+route = "/"
+component = "redirect-root"
+
+[component.redirect-root]
+source = { url = "https://github.com/fermyon/spin-redirect/releases/download/v0.1.0/redirect.wasm", digest = "sha256:8bee959843f28fef2a02164f5840477db81d350877e1c22cb524f41363468e52" }
+environment = { DESTINATION = "/wiki/~/p/~bordex-ripdur/urmanac/"} # , STATUSCODE = "301" }

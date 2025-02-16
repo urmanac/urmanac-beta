@@ -1,0 +1,10 @@
+apiVersion: core.spinkube.dev/v1alpha1
+kind: SpinApp
+metadata:
+  name: urmanac
+  namespace: tenant-test
+spec:
+  enableAutoscaling: false
+  executor: containerd-shim-spin
+  image: ghcr.io/urmanac/urmanac-beta:0.1.0
+  replicas: 1

@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: www-urmanac
+  namespace: tenant-test
+spec:
+  ingressClassName: tenant-test
+  rules:
+  - host: beta.urmanac.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: urmanac
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  - host: www.urmanac.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: urmanac
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - www.urmanac.com
+    secretName: www-urmanac-tls
+  - hosts:
+    - beta.urmanac.com
+    secretName: beta-urmanac-tls

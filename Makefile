@@ -9,7 +9,7 @@ rsync:
 	rsync -av --progress --delete ../../urmanac/socryx-topled.arvo.network ./assets/
 
 push:
-	spin registry push ghcr.io/urmanac/urmanac-beta:0.1.1
+	spin registry push ghcr.io/urmanac/urmanac-beta:0.1.2
 
 registry_login:
 	spin registry login ghcr.io -u kingdonb -p $(github_token)

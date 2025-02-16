@@ -6,5 +6,5 @@ metadata:
 spec:
   enableAutoscaling: false
   executor: containerd-shim-spin
-  image: ghcr.io/urmanac/urmanac-beta:0.1.1
+  image: ghcr.io/urmanac/urmanac-beta:0.1.2
   replicas: 1

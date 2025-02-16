@@ -1,6 +1,6 @@
 MIT No Attribution
 
-Copyright 2024 Urmanac (Kingdon Barrett)
+Copyright 2025 Urmanac (Kingdon Barrett)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
